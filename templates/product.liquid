@@ -1,18 +1,168 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
 
+{{ 'product-responsive.css' | asset_url | stylesheet_tag }}
+
 {% assign product = product %}
 
-<div class="product__container">
-  <div class="product__image">
-    <img src="{{ product.images.first.src | img_url: '800x800' }}" alt="{{ product.title }}" loading="lazy">
+<div class="container">
+  <div class="container-main">
+    <div
+      class="container-image container-image__desktop"
+      style="background-image: url('{{ product.featured_image.src | product_img_url: "large" }}')"
+    ></div>
+
+    <img
+      class="container-image container-image__mobile"
+      src="{{ product.featured_image.src | product_img_url: "grande" }}"
+    >
+
+    <div class="container-details">
+      <p class="container-details__title">{{ product.title }}</p>
+
+      <div class="container-details__ratings-reviews">
+        <div class="ratings">
+          <img
+            src="https://res.cloudinary.com/olamileke/image/upload/v1687615636/backmeup_dev/Path_fizo1r.svg"
+          >
+          <img
+            src="https://res.cloudinary.com/olamileke/image/upload/v1687615636/backmeup_dev/Path_fizo1r.svg"
+          >
+          <img
+            src="https://res.cloudinary.com/olamileke/image/upload/v1687615636/backmeup_dev/Path_fizo1r.svg"
+          >
+          <img
+            src="https://res.cloudinary.com/olamileke/image/upload/v1687615636/backmeup_dev/Path_fizo1r.svg"
+          >
+          <img
+            src="https://res.cloudinary.com/olamileke/image/upload/v1687615636/backmeup_dev/Path_fizo1r.svg"
+          >
+        </div>
+
+        <p class="reviews">3054 reviews</p>
+      </div>
+
+      <div class="container-details__description">
+        {{ product.description }}
+      </div>
+
+      <div class="container-details__subscription">
+        <div class="header">
+          <div class="name">
+            <p>Subscription</p>
+            <span>30% OFF</span>
+          </div>
+
+          <div class="price">
+            <s>{{ product.compare_at_price_max | money }}</s>
+            <p>{{ product.price | money }}</p>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="offerings-parent">
+            <div class="offerings">
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>24/7 video vet support</p>
+              </div>
+
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>Health tracking and recommendations</p>
+              </div>
+
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>AI assistant, personalised health insights and vet tips</p>
+              </div>
+            </div>
+            <div class="offerings">
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>
+                  30% off first order, <br>
+                  then 20% off for life
+                </p>
+              </div>
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>Free delivery monthly and exclusive rewards</p>
+              </div>
+              <div class="offering">
+                <img
+                  src="https://res.cloudinary.com/olamileke/image/upload/v1687621032/backmeup_dev/check-blue_bq0pdw.svg"
+                >
+                <p>100% money back guarantee</p>
+              </div>
+            </div>
+          </div>
+          <div class="subscribe-info">
+            <button>
+              <p>Subscribe</p>
+              <span></span>
+              <p class="price">{{ product.price | money }}</p>
+            </button>
+            <div>
+              <p>After first order you will pay {{ product.compare_at_price_max | money }}/month.</p>
+              <p>Cancel, pause or change anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="product__info">
-    <h1>{{ product.title }}</h1>
-    <p class="product__price">{{ product.price | money }}</p>
-    <p class="product__description">{{ product.description }}</p>
-    <form action="/#" method="post">
-      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-      <button type="submit" class="btn btn-primary btn-block">Add to Cartz</button>
-    </form>
-  </div>
+  {% comment %}
+     <div class="container-upsell">
+     <div class="container-upsell__upsell">
+      <p class="title">Freqently bought together</p>
+      <div class="products">
+       <div class="product">
+        <img
+         src="https://cdn.shopify.com/s/files/1/0603/5852/5127/products/NewProductLaunchWebsitePhotos_2_1400x.png?v=1673441309"
+        >
+        <p class="product-title">Joints & Mobility</p>
+        <p>£26.00</p>
+       </div>
+       <div class="product">
+        <img
+         src="https://cdn.shopify.com/s/files/1/0603/5852/5127/products/NewProductLaunchWebsitePhotos_1_ac6abf6a-61d6-41e3-bfae-486cb78fc652_1400x.png?v=1673440653"
+
+        >
+
+        <p class="product-title">General Wellbeing</p>
+
+        <p>£26.00</p>
+
+       </div>
+
+       <div class="product">
+
+        <img
+
+         src="https://cdn.shopify.com/s/files/1/0603/5852/5127/files/NewProductLaunchWebsitePhotos_13_1_f37c0d94-166d-48b9-b02b-bd909267e35d_1_2000x.png?v=1685006204"
+
+        >
+
+        <p class="product-title">Anal Glands</p>
+
+        <p>£26.00</p>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+  {% endcomment %}
 </div>

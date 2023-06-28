@@ -8,7 +8,7 @@
       <div class="container__product">
         <a href="{{ product.url }}">
           <div
-            style="background-image: url('{{ product.featured_image.src }}')"
+            style="background-image: url('{{ product.featured_image.src | product_img_url: "large" }}')"
           ></div>
         </a>
         <a href="{{ product.url }}" class="name">{{ product.title }}</a>
@@ -19,24 +19,30 @@
       </div>
     {% endfor %}
   {% else %}
-    <p>No products found.</p>
+    <p class="container__message">No products found.</p>
   {% endif %}
 </section>
 
 {% schema %}
 {
   "name": "Product List",
+
   "settings": [
     {
       "type": "text",
+
       "id": "title",
+
       "label": "Section Title",
+
       "default": "Products"
     }
   ],
+
   "presets": [
     {
       "name": "Product List - Default",
+
       "category": "Products"
     }
   ]

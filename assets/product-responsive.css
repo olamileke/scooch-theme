@@ -1,0 +1,156 @@
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 40px;
+  }
+
+  .container-main {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .container-image {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .container-image__mobile {
+    display: block;
+  }
+
+  .container-image__desktop {
+    display: none;
+  }
+
+  .container-details {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 32px;
+    box-sizing: border-box;
+  }
+
+  .container-details__title {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+
+  .container-details__ratings-reviews {
+    margin-bottom: 24px;
+  }
+
+  .container-details__description {
+    margin-bottom: 32px;
+  }
+
+  .container-details__subscription .header {
+    color: black;
+  }
+
+  .container-details__subscription .header .price s {
+    color: #808080;
+  }
+
+  .container-details__subscription .body .offerings-parent {
+    flex-direction: column;
+  }
+
+  .container-details__subscription .body .offerings {
+    width: 90%;
+  }
+
+  .container-details__subscription .body .offerings:first-of-type {
+    margin-bottom: 16px;
+  }
+
+  .container-details__subscription .body .offerings br {
+    display: none;
+  }
+
+  .container-details__subscription .body .offering {
+    margin-bottom: 16px;
+  }
+
+  .container-details__subscription .body .subscribe-info {
+    justify-content: center;
+  }
+
+  .container-details__subscription .body .subscribe-info button {
+    padding: 14px 24px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .container-details__subscription .body .subscribe-info span {
+    width: 2px;
+  }
+
+  .container-details__subscription .body .subscribe-info div {
+    position: relative;
+    top: 1px;
+  }
+
+  .container-upsell {
+    padding: 0px 32px;
+  }
+
+  .container-upsell__upsell {
+    width: 100%;
+  }
+
+  .container-upsell__upsell .title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .container-upsell__upsell .products {
+    overflow-x: scroll;
+    gap: 20px;
+  }
+
+  .container-upsell__upsell .products::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .container-upsell__upsell .product {
+    width: 38%;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .container-details {
+    padding: 0 16px;
+  }
+
+  .container-details__subscription .header .name span {
+    display: none;
+  }
+
+  .container-details__subscription .body .subscribe-info {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .container-details__subscription .body .subscribe-info button {
+    width: 100%;
+  }
+
+  .container-details__subscription .body .subscribe-info div {
+    top: 0;
+  }
+
+  .container-details__subscription .body .subscribe-info div p {
+    text-align: center;
+  }
+
+  .container-upsell {
+    padding: 0px 16px;
+  }
+}

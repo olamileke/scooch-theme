@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Above The Beyond";
+  src: url("./AbovetheBeyondSerif-Regular.woff2");
+}
+
+@font-face {
   font-family: "Silka";
   src: url("./Silka-Regular-webfont.woff2");
 }
@@ -21,14 +26,18 @@ div:empty {
 }
 
 .container {
-  row-gap: 32px;
-  column-gap: 16px;
-  max-width: 343px;
   margin: 8vh auto;
   font-family: Silka;
+  padding: 0 1.4rem;
+  row-gap: 32px;
+  column-gap: 16px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.container__message {
+  text-align: center;
 }
 
 .container__product {
@@ -80,11 +89,18 @@ div:empty {
   font-weight: 400;
 }
 
+@media (min-width: 430px) {
+  .container {
+    margin: 8vh auto;
+    padding: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
-    max-width: 500px;
     row-gap: 72px;
     column-gap: 75.77px;
+    max-width: 500px;
   }
 }
 
@@ -104,8 +120,8 @@ div:empty {
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1228px;
     gap: 116px;
+    max-width: 1228px;
   }
 
   .container__product {
