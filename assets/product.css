@@ -51,19 +51,25 @@ div:empty {
   background-position-y: 100%;
 }
 
+.container-image__desktop {
+  height: calc(100% - 10px);
+}
+
 .container-image__mobile {
   display: none;
 }
 
 .container-details {
   width: calc((100% - 32px) / 2);
+  position: relative;
+  top: -12px;
 }
 
 .container-details__title {
   font-size: 44px;
   color: #000000;
   font-family: "Above The Beyond";
-  margin-bottom: 8px;
+  margin-bottom: -6px;
 }
 
 .container-details__ratings-reviews {
@@ -89,9 +95,9 @@ div:empty {
   flex-direction: column;
   gap: 18px;
   margin-bottom: 40px;
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 20px;
-  width: 95%;
+  width: 100%;
   color: black;
   font-weight: 400;
 }
@@ -142,7 +148,7 @@ div:empty {
 }
 
 .container-details__subscription .body .offerings {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 400;
   color: #1d1d1b;
   width: 49%;

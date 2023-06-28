@@ -8,12 +8,12 @@
   <div class="container-main">
     <div
       class="container-image container-image__desktop"
-      style="background-image: url('{{ product.featured_image.src | product_img_url: "large" }}')"
+      style="background-image: url('{{ product.featured_image.src | img_url: '1024x1024' }}')"
     ></div>
 
     <img
       class="container-image container-image__mobile"
-      src="{{ product.featured_image.src | product_img_url: "grande" }}"
+      src="{{ product.featured_image.src | img_url: '1024x1024' }}"
     >
 
     <div class="container-details">

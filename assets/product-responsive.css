@@ -32,11 +32,12 @@
     margin-top: 40px;
     padding: 0 32px;
     box-sizing: border-box;
+    top: 0;
   }
 
   .container-details__title {
     font-size: 34px;
-    margin-bottom: 8px;
+    margin-bottom: -4px;
   }
 
   .container-details__ratings-reviews {
