@@ -2,31 +2,22 @@
 
 {% assign products = collections.all.products %}
 
-<section class="product-list">
-  <h2>{{ section.settings.title }}</h2>
-
+<section class="container">
   {% if products.size > 0 %}
-    <ul>
-      {% for product in products %}
-        <li>
-          <a href="{{ product.url }}" class="block">
-            <div>
-              {% include 'card',
-                title: product.title,
-                vendor: product.vendor,
-                title_link: product.url,
-                price: product.price,
-                price_compare: product.compare_at_price_max,
-                price_varies: product.price_varies,
-                badge: product.badge,
-                rating: product.rating,
-                featured_image: product.featured_image
-              %}
-            </div>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% for product in products %}
+      <div class="container__product">
+        <a href="{{ product.url }}">
+          <div
+            style="background-image: url('{{ product.featured_image }}')"
+          ></div>
+        </a>
+        <a href="{{ product.url }}" class="name">{{ product.title }}</a>
+        <div class="price">
+          <p>{{ product.price }}</p>
+          <s>{{ product.compare_at_price_max }}</s>
+        </div>
+      </div>
+    {% endfor %}
   {% else %}
     <p>No products found.</p>
   {% endif %}

@@ -1,17 +1,121 @@
-.product-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@font-face {
+  font-family: "Silka";
+  src: url("./Silka-Regular-webfont.woff2");
 }
 
-.product-list ul {
+@font-face {
+  font-family: "Silka-Medium";
+  src: url("./Silka-Medium.ttf");
+}
+
+html,
+body,
+p {
+  padding: 0;
+  margin: 0;
+  font-family: Silka;
+}
+
+.container {
+  row-gap: 32px;
+  column-gap: 16px;
+  max-width: 343px;
+  margin: 8vh auto;
+  font-family: Silka;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
-  padding: 0;
-  list-style: none;
-  gap: 32px;
+}
+
+.container__product {
+  color: #1d1d1b;
+  display: flex;
+  flex-direction: column;
+  width: 163.5px;
+  font-weight: 400;
+}
+
+.container__product a {
+  text-decoration: none;
+  color: #1d1d1b;
+  text-align: center;
+}
+
+.container__product a div {
+  height: 163.5px;
+  border-radius: 12px;
+  background-size: 126%;
+  background-position-x: center;
+  background-position-y: 100%;
+}
+
+.container__product .name {
+  font-size: 16px;
+  margin-top: 12px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.container__product .price {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  gap: 6px;
+}
+
+.container__product .price p {
+  font-family: Silka-Medium;
+  font-weight: 500;
+}
+
+.container__product .price s {
+  color: #757a81;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 500px;
+    row-gap: 72px;
+    column-gap: 75.77px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: unset;
+  }
+
+  .container__product {
+    flex-shrink: 0;
+  }
+
+  .container__product a div {
+    height: 163.5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1228px;
+    gap: 116px;
+  }
+
+  .container__product {
+    width: 220px;
+    flex-shrink: unset;
+  }
+
+  .container__product .name {
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .container__product a div {
+    height: 220px;
+  }
 }
