@@ -24,7 +24,7 @@
   }
 
   .container-image__desktop {
-    display: none;
+    display: none !important;
   }
 
   .container-details {
@@ -50,6 +50,7 @@
 
   .container-details__subscription .header {
     color: black;
+    padding: 18px 24px;
   }
 
   .container-details__subscription .header .price s {
