@@ -18,7 +18,7 @@
                 src="{{ product.featured_image.src | product_img_url: "large"  }}"
               >
               <p class="product-title">{{ product.title }}</p>
-              <p>{{ product.price | money }}</p>
+              <p>{{ product.compare_at_price_max | money }}</p>
             </a>
           </li>
         {%- endfor -%}
