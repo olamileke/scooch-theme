@@ -82,8 +82,6 @@ div:empty {
 .container__product .price p {
   font-family: Silka-Medium;
   font-weight: 500;
-  position: relative;
-  top: 0.3px;
 }
 
 .container__product .price s {
