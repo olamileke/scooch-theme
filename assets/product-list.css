@@ -82,11 +82,14 @@ div:empty {
 .container__product .price p {
   font-family: Silka-Medium;
   font-weight: 500;
+  position: relative;
+  top: 0.5px;
 }
 
 .container__product .price s {
   color: #757a81;
   font-weight: 400;
+  opacity: 0.85;
 }
 
 @media (min-width: 430px) {
